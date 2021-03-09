@@ -1,0 +1,20 @@
+﻿@model aspnet_tthk.Models.Guest
+
+@using (Html.BeginForm())
+{
+	@Html.ValidationSummary()
+	<p>Sisesta nimi: @Html.TextBoxFor(x => x.Name, new {@class = "form-control" }) </p>
+	<p>Sisesta email: @Html.TextBoxFor(x=>x.Email, new { @class = "form-control" })</p>
+	<p>Sisesta tel: @Html.TextBoxFor(x=>x.Phone, new { @class = "form-control" })</p>
+	<p>
+		Sinu valik:
+		@Html.DropDownListFor(x=>x.WillAttend,
+	   new[]
+	   {
+		   new SelectListItem() { Text="Tule kindlasti!", Value=bool.TrueString },
+		   new SelectListItem() { Text="Kahjuks ei saa tulla", Value=bool.FalseString}
+	   }, "Vali siit", new { @class = "form-control" })
+	</p>
+
+	<input type="submit" value="Saada vastus" class="btn btn-primary" />
+}
