@@ -7,7 +7,9 @@ using System.ComponentModel.DataAnnotations;
 namespace aspnet_tthk.Models
 {
     public class Guest
-    {
+    {   
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Sisesta nimi")]
         public string Name { get; set; }
 
